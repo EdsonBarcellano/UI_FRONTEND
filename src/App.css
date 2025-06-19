@@ -1,73 +1,124 @@
-.chat-container {
-  max-width: 500px;
-  margin: 40px auto;
-  background: #f8f9fa;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  padding: 20px;
-  font-family: Arial, sans-serif;
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* Page background and font */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Container style */
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
 h1 {
   text-align: center;
-  color: #333;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #2c3e50;
 }
 
-.chat-box {
-  height: 300px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 15px;
-  background: white;
-}
-
-.message {
-  padding: 8px 12px;
-  margin: 5px 0;
-  border-radius: 20px;
-  max-width: 75%;
-  word-wrap: break-word;
-}
-
-.message.user {
-  background-color: #007bff;
-  color: white;
-  align-self: flex-end;
-  text-align: right;
-  margin-left: auto;
-}
-
-.message.bot {
-  background-color: #e4e6eb;
-  color: #333;
-  text-align: left;
-}
-
-.input-area {
+/* Form layout horizontal */
+form {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
-.input-area input {
-  flex-grow: 1;
+/* Label + input block */
+label {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Inputs and dropdowns */
+input,
+select {
+  margin-top: 8px;
   padding: 10px;
-  font-size: 16px;
-  border-radius: 20px;
+  font-size: 14px;
   border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: 0.2s border-color;
 }
 
-.input-area button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
+input:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Submit button */
+button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 14px;
+  background-color: #3498db;
   color: white;
+  font-weight: bold;
+  font-size: 16px;
   border: none;
-  border-radius: 20px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.input-area button:hover {
-  background-color: #0056b3;
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Prediction and error messages */
+.success,
+.error {
+  margin-top: 30px;
+  padding: 14px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  label {
+    flex: 1 1 100%;
+  }
+
+  button {
+    margin-top: 20px;
+  }
 }
